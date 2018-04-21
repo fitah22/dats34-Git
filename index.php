@@ -33,8 +33,13 @@
 <!-- Display table records -->
 <?php $results = mysqli_query($db, "SELECT * FROM student"); ?>
 
+
+
 <table>
 	<thead>
+		<div class="add">
+			<a href="add.html" class="add_btn"  >Add student</a>
+		</div>
 		<tr>
 			<th>First Name</th>
       <th>Last Name</th>
@@ -51,7 +56,7 @@
       	<td><?php echo $row['email']; ?></td>
         	<td><?php echo $row['study_program_id']; ?></td>
 			<td>
-				<a href="index.php?edit=<?php echo $row['id']; ?>" class="edit_btn" >Edit</a>
+				<a href="edit.php?edit=<?php echo $row['id']; ?>" class="edit_btn" >Edit</a>
 			</td>
 			<td>
 				<a href="server.php?del=<?php echo $row['id']; ?>" class="del_btn">Delete</a>
@@ -60,44 +65,7 @@
 	<?php } ?>
 </table>
 
-	<form method="post" action="server.php" >
-
-<!-- First Name field -->
-<input type="hidden" name="id" value="<?php echo $id; ?>">
-		<div class="input-group">
-			<label>First Name</label>
-			<input type="text" name="fname" value="<?php echo $fname; ?>">
-		</div>
-
-  <!-- Last Name field -->
-  <div class="input-group">
-    <label>Last Name</label>
-    <input type="text" name="lname" value="<?php echo $lname; ?>">
-  </div>
-
-  <!-- Email field -->
-  <div class="input-group">
-    <label>Email</label>
-    <input type="text" name="email" value="<?php echo $email; ?>">
-  </div>
-
-  <!-- Study Program field -->
-  <div class="input-group">
-    <label>Study Program</label>
-    <input type="text" name="std" value="<?php echo $std; ?>">
-  </div>
-
-
-
-      <?php if ($update == true): ?>
-  	<button class="btn" type="submit" name="update" style="background: #556B2F;" >update</button>
-  <?php else: ?>
-  	<button class="btn" type="submit" name="save" >Save</button>
-  <?php endif ?>
-
-
-	</form>
-
+	<
 
 </body>
 

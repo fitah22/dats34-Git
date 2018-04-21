@@ -11,7 +11,7 @@
   $std = "";
 	$update = false;
 
-  <!-- Create Method -->
+
 
 	if (isset($_POST['save'])) {
 		$fname = $_POST['fname'];
@@ -24,7 +24,7 @@
 		header('location: index.php');
 	}
 
-<!-- Update Method -->
+
 
   if (isset($_POST['update'])) {
 	$id = $_POST['id'];
@@ -38,7 +38,7 @@
 	header('location: index.php');
 }
 
-<!-- Delete Method -->
+
 
 if (isset($_GET['del'])) {
 	$id = $_GET['del'];

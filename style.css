@@ -1,5 +1,5 @@
-body {
-    font-size: 19px;
+body {background-color: dimgrey;
+  color: white;
 }
 table{
     width: 50%;
@@ -15,9 +15,7 @@ th, td{
     height: 30px;
     padding: 2px;
 }
-tr:hover {
-    background: #F5F5F5;
-}
+
 
 form {
     width: 45%;
@@ -76,4 +74,32 @@ form {
     border: 1px solid #3c763d;
     width: 50%;
     text-align: center;
+}
+
+.add_btn{
+  text-decoration: none;
+  padding: 2px 5px;
+  background: #2E8B57;
+  color: white;
+  border-radius: 3px;
+  text-align: center;
+  margin-left: 450px;
+  font-size: 30
+
+}
+
+.add{
+  float: center;
+  flex:auto;
+}
+
+.title{
+
+  text-align: center;
+}
+
+.back_link{
+  font-size: 20;
+  text-align: center;
+
 }
