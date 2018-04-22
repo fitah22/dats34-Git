@@ -10,7 +10,7 @@
 			$fname = $n['first_name'];
 			$lname = $n['last_name'];
       $email = $n['email'];
-      $std = $n['study_program_id'];
+      $std = $n['study_program'];
 		}
 	}
 ?>

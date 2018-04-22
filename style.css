@@ -1,8 +1,11 @@
-body {background-color: dimgrey;
-  color: white;
+body {
+    font-size: 19px;
+    background-color: #292d35;
+    color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 table{
-    width: 50%;
+    width: 80%;
     margin: 30px auto;
     border-collapse: collapse;
     text-align: left;
@@ -15,7 +18,9 @@ th, td{
     height: 30px;
     padding: 2px;
 }
-
+tr:hover {
+    background: #333;
+}
 
 form {
     width: 45%;
@@ -76,30 +81,14 @@ form {
     text-align: center;
 }
 
-.add_btn{
-  text-decoration: none;
-  padding: 2px 5px;
-  background: #2E8B57;
-  color: white;
-  border-radius: 3px;
-  text-align: center;
-  margin-left: 450px;
-  font-size: 30
-
-}
-
-.add{
-  float: center;
-  flex:auto;
-}
-
-.title{
-
-  text-align: center;
-}
-
-.back_link{
-  font-size: 20;
-  text-align: center;
-
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 500px;
 }
