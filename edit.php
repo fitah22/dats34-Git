@@ -3,8 +3,7 @@
 	if (isset($_GET['edit'])) {
 		$id = $_GET['edit'];
 		$update = true;
-		$record = mysqli_query($db, "SELECT * FROM student WHERE id=$id");
-
+		$record = mysqli_query($db, "SELECT * FROM student WHERE id= '$id'");
 		if (count($record) == 1 ) {
 			$n = mysqli_fetch_array($record);
 			$fname = $n['first_name'];
@@ -48,9 +47,25 @@
     <!-- Study Program field -->
     <div class="input-group">
       <label>Study Program</label>
-      <input type="text" name="std" value="<?php echo $std; ?>">
-    </div>
+      <!--<input type="text" name="std" value="<?php echo $std; ?>">-->
+<div class="custom-select" style="width:200px;">
+			  <select  name="std" >
+			    <?php
+			  $sql= "SELECT * FROM study_program";
+			    $result = $db->query($sql);
 
+			    while($row = $result->fetch_assoc()) {
+			    //$row = $result->fetch_assoc();
+			    //foreach ($row as $s ) {
+			      # code...
+
+			    echo " <option value='".$row['study_program']."' selected='selected' > ".$row['study_program']."  </option>";
+			    }
+			    ?>
+
+			</select>
+    </div>
+</div>
 
 
         <?php if ($update == true): ?>

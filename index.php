@@ -37,6 +37,7 @@
 <table>
 	<thead>
 		<tr>
+			<th>StudentNr</th>
 			<th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
@@ -47,6 +48,7 @@
 
 	<?php while ($row = mysqli_fetch_array($results)) { ?>
 		<tr>
+			<td><?php echo $row['id']; ?></td>
 			<td><?php echo $row['first_name']; ?></td>
 			<td><?php echo $row['last_name']; ?></td>
       	<td><?php echo $row['email']; ?></td>
@@ -62,7 +64,7 @@
 </table>
 
 
-			<a href="add.html" class="button"  >Add student</a>
+			<a href="add.php" class="button"  >Add student</a>
 
 
 

@@ -1,5 +1,6 @@
-<DOCTYPE html>
-  <html>
+<?php  include('server.php'); ?>
+
+<html>
 <head>
 
 <link rel="stylesheet" href="style.css">
@@ -8,6 +9,12 @@
 
   <form method="post" action="server.php" >
 <h3 class="title">Student Registration</h3>
+
+<div class="input-group">
+  <label>StudentNr</label>
+  <input type="text" name="id" value="">
+</div>
+
 <!-- First Name field -->
 		<div class="input-group">
 			<label>First Name</label>
@@ -27,11 +34,30 @@
   </div>
 
   <!-- Study Program field -->
-  <div class="input-group">
-    <label>Study Program</label>
-    <input type="text" name="std" value="">
-  </div>
+<div class="select" style="width:200px;">
+  <select  name="std">
+    <select class="select" name="">
+      <?php
 
+    $sql= "SELECT * FROM study_program";
+      $result = $db->query($sql);
+
+
+      while($row = $result->fetch_assoc()) {
+      //$row = $result->fetch_assoc();
+      //foreach ($row as $s ) {
+        # code...
+
+      echo " <option value='".$row['study_program']."' selected='selected' > ".$row['study_program']."  </option>";
+      }
+      ?>
+
+
+    </select>
+
+</select>
+<br>
+</div>
 
 
     <button class="btn" type="submit" name="save" >Save</button>
