@@ -1,75 +1,69 @@
-<?php  include('server.php'); ?>
-<?php
-	if (isset($_GET['edit'])) {
-		$id = $_GET['edit'];
-		$update = true;
-		$record = mysqli_query($db, "SELECT * FROM student WHERE id=$id");
-		if (count($record) == 1 ) {
-			$n = mysqli_fetch_array($record);
-			$fname = $n['first_name'];
-			$lname = $n['last_name'];
-      $email = $n['email'];
-      $std = $n['study_program'];
-		}
-	}
-?>
 <!DOCTYPE html>
-<html>
+<html >
+
 <head>
-	<title>Student Mangement</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8"/>
+    <meta charset="UTF-8"/>
+    <title class="title">Student Manegement</title>
+    <link rel="stylesheet" href="style.css">
+
+    <div id="meny" style="display: block;">
+  		 <ul id="navbar">
+  		 <li>
+  				 <a href="index.php" style="display: block; font-weight: bold;"> Home</a>
+  		 </li>
+  		 <li>
+  				 <a href="add.php" style="display: block;"> Add Student</a>
+  		 </li>
+  		 <li>
+  				 <a href="list.php" style="display: block;">View All Students</a>
+  		 </li>
+
+  		 </ul>
+   </div>
 </head>
 <body>
-  <?php if (isset($_SESSION['message'])): ?>
-  	<div class="msg">
-  		<?php
-  			echo $_SESSION['message'];
-  			unset($_SESSION['message']);
-  		?>
-  	</div>
-  <?php endif ?>
 
-<!-- Display table records -->
-<?php $results = mysqli_query($db, "SELECT * FROM student"); ?>
+<div class="container">
 
-
-
-<table>
-	<thead>
-		<tr>
-			<th>StudentNr</th>
-			<th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-			<th>Study Program</th>
-			<th colspan="2">Action</th>
-		</tr>
-	</thead>
-
-	<?php while ($row = mysqli_fetch_array($results)) { ?>
-		<tr>
-			<td><?php echo $row['id']; ?></td>
-			<td><?php echo $row['first_name']; ?></td>
-			<td><?php echo $row['last_name']; ?></td>
-      	<td><?php echo $row['email']; ?></td>
-        	<td><?php echo $row['study_program']; ?></td>
-			<td>
-				<a href="edit.php?edit=<?php echo $row['id']; ?>" class="edit_btn" >Edit</a>
-			</td>
-			<td>
-				<a href="server.php?del=<?php echo $row['id']; ?>" class="del_btn">Delete</a>
-			</td>
-		</tr>
-	<?php } ?>
-</table>
-
-
-			<a href="add.php" class="button"  >Add student</a>
+<h3>Student Manegement Application </h3>
+<h5>This Application is develeped by group 34 in Datanettverk og Skytjeneste Course <br> <br>
+Grop members:
+<br>
+<br>
+1. Abdifatah A. Bashi
+<br>
+<br>
+2. Abebe
+<br>
+<br>
+3. Crystal
+<br>
+<br>
+4. Siham Sidali Feklani
 
 
 
+
+ </h5>
+
+
+
+
+
+
+
+</div>
+footer class="footer">
+	Server Name: <?php 	echo $_SERVER['SERVER_NAME'] ?>
+
+ <br>
+	Server IP: <?php echo $_SERVER['SERVER_ADDR']; ?>
+
+</footer>
 </body>
 
 
+</body>
 
 </html>

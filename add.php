@@ -4,6 +4,20 @@
 <head>
 
 <link rel="stylesheet" href="style.css">
+<div id="meny" style="display: block;">
+   <ul id="navbar">
+   <li>
+       <a href="index.php" style="display: block; font-weight: bold;"> Home</a>
+   </li>
+   <li>
+       <a href="add.php" style="display: block;"> Add Student</a>
+   </li>
+   <li>
+       <a href="list.php" style="display: block;">View All Students</a>
+   </li>
+
+   </ul>
+</div>
 </head>
 <body>
 
@@ -33,31 +47,40 @@
     <input type="text" name="email" value="">
   </div>
 
-  <!-- Study Program field -->
-<div class="select" style="width:200px;">
-  <select  name="std">
-    <select class="select" name="">
-      <?php
+  <div class="input-group">
+    <label> Study Program</label>
+    <!-- Study Program field -->
+    <div class="selectdiv">
 
-    $sql= "SELECT * FROM study_program";
-      $result = $db->query($sql);
+    <select name="std">
 
+        <?php
 
-      while($row = $result->fetch_assoc()) {
-      //$row = $result->fetch_assoc();
-      //foreach ($row as $s ) {
-        # code...
-
-      echo " <option value='".$row['study_program']."' selected='selected' > ".$row['study_program']."  </option>";
-      }
-      ?>
+      $sql= "SELECT * FROM study_program";
+        $result = $db->query($sql);
 
 
-    </select>
+        while($row = $result->fetch_assoc()) {
+        //$row = $result->fetch_assoc();
+        //foreach ($row as $s ) {
+          # code...
 
-</select>
+        echo " <option value='".$row['study_program']."' selected='selected' > ".$row['study_program']."  </option>";
+        }
+        ?>
+
+
+      </select>
+    </div>
+    <br>
+
+  </div>
+
+
+
 <br>
-</div>
+<br>
+
 
 
     <button class="btn" type="submit" name="save" >Save</button>
@@ -77,6 +100,12 @@
 
 
 
-
 </body>
+
+<footer class="footer">
+  Server Name: <?php 	echo $_SERVER['SERVER_NAME'] ?>
+
+  | Server IP: <?php echo $_SERVER['SERVER_ADDR']; ?>
+
+</footer>
 </html>

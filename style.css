@@ -3,6 +3,7 @@ body {
     background-color: #292d35;
     color: white;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
+    height: 100%;
 }
 table{
     width: 80%;
@@ -42,14 +43,9 @@ form {
     margin: 3px;
 }
 
-.select{
-  height: 50%;
-  width: 93%;
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid gray;
-}
+
+
+
 .input-group input {
     height: 30px;
     width: 93%;
@@ -102,4 +98,133 @@ form {
     display: inline-block;
     font-size: 16px;
     margin-left: 500px;
+}
+
+
+
+.selectdiv {
+ position: relative;
+ /*Don't really need this just for demo styling*/
+
+ float: left;
+ min-width: 200px;
+
+ font-size: 19px;
+}
+
+/*To remove button from IE11, thank you Matt */
+select::-ms-expand {
+    display: none;
+}
+
+.selectdiv:after {
+ content: '<>';
+ font: 17px "Consolas", monospace;
+ color: #333;
+ -webkit-transform: rotate(90deg);
+ -moz-transform: rotate(90deg);
+ -ms-transform: rotate(90deg);
+ transform: rotate(90deg);
+ right: 11px;
+ /*Adjust for position however you want*/
+
+ top: 18px;
+ padding: 0 0 2px;
+ border-bottom: 1px solid #999;
+ /*left line */
+
+ position: absolute;
+ pointer-events: none;
+}
+
+.selectdiv select {
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ appearance: none;
+ /* Add some styling */
+
+ display: block;
+ width: 100%;
+ max-width: 320px;
+ height: 50px;
+ float: right;
+ margin: 5px 0px;
+ padding: 0px 24px;
+ font-size: 16px;
+ line-height: 1.75;
+ color: #333;
+ background-color: #ffffff;
+ background-image: none;
+ border: 1px solid #cccccc;
+ -ms-word-break: normal;
+ word-break: normal;
+}
+
+a {
+  margin: 10px;
+  color: white;
+
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: grey;
+}
+
+
+#meny {
+width:100%; /* Bredde */
+
+
+
+
+
+
+
+}
+#navbar { /* Meny innholdet */
+margin: 0;
+height: 1.5em;
+padding: 5px 0 20px 0;
+color: white;
+}
+#navbar li { /* SÃ¸rger for at menyen gÃ¥r vannrett */
+font-size: 16px;
+float: left;
+list-style: none;
+width: 180px; /* Bredde pÃ¥ hver meny boks */
+padding: 0 10px;
+
+}
+#navbar li a {
+display: block;
+color: white;
+
+}
+#navbar li a:hover {
+  color: grey;
+}
+
+#box {
+   background-color: white;
+   width: 80%;
+   margin: 25px auto;
+   padding: 10px;
+}
+
+#content {
+   padding: 10px 5px;
+}
+
+footer {
+background-color: #333;
+position: absolute;
+text-align: center;
+bottom: 0;
+width: 100%;
+padding: 20px 0;
 }

@@ -18,7 +18,21 @@
   <head>
     <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
-    <title></title>
+    <title>Edit</title>
+		<div id="meny" style="display: block;">
+			 <ul id="navbar">
+			 <li>
+					 <a href="index.php" style="display: block; font-weight: bold;"> Home</a>
+			 </li>
+			 <li>
+					 <a href="add.php" style="display: block;"> Add Student</a>
+			 </li>
+			 <li>
+					 <a href="list.php" style="display: block;">View All Students</a>
+			 </li>
+
+			 </ul>
+	 </div>
   </head>
   <body>
 
@@ -45,27 +59,38 @@
     </div>
 
     <!-- Study Program field -->
-    <div class="input-group">
-      <label>Study Program</label>
-      <!--<input type="text" name="std" value="<?php echo $std; ?>">-->
-<div class="custom-select" style="width:200px;">
-			  <select  name="std" >
-			    <?php
-			  $sql= "SELECT * FROM study_program";
-			    $result = $db->query($sql);
+		<div class="input-group">
+	    <label> Study Program</label>
+	    <!-- Study Program field -->
+	    <div class="selectdiv">
 
-			    while($row = $result->fetch_assoc()) {
-			    //$row = $result->fetch_assoc();
-			    //foreach ($row as $s ) {
-			      # code...
+	    <select name="std">
 
-			    echo " <option value='".$row['study_program']."' selected='selected' > ".$row['study_program']."  </option>";
-			    }
-			    ?>
+	        <?php
 
-			</select>
-    </div>
-</div>
+	      $sql= "SELECT * FROM study_program";
+	        $result = $db->query($sql);
+
+
+	        while($row = $result->fetch_assoc()) {
+	        //$row = $result->fetch_assoc();
+	        //foreach ($row as $s ) {
+	          # code...
+
+	        echo " <option value='".$row['study_program']."' selected='selected' > ".$row['study_program']."  </option>";
+	        }
+	        ?>
+
+
+	      </select>
+
+	    </div>
+			<br>
+			<br>
+
+	  </div>
+
+	  <br>
 
 
         <?php if ($update == true): ?>
@@ -76,7 +101,12 @@
 
 
   	</form>
+		<footer class="footer">
+			Server Name: <?php 	echo $_SERVER['SERVER_NAME'] ?>
+			<br>
+			<br>
+			Server IP: <?php echo $_SERVER['SERVER_ADDR']; ?>
 
-
+		</footer>
   </body>
 </html>
